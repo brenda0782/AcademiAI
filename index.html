@@ -1,75 +1,147 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="AcademAI - Plataforma de asistencia académica con IA. Citas APA, redacción, revisión de tesis y más." />
-  <title>AcademAI | Asistencia Académica</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>AcademAI | Asistencia Académica con IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f5f7ff;
+      --color-primary: #1e40af; /* Azul oscuro */
+      --color-accent: #e11d48; /* Rojo */
+      --color-text: #111827; /* Negro grisáceo */
+      --color-white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+      color: var(--color-white);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: var(--color-white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .section {
+      background: var(--color-white);
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 800px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+    }
+
+    .qr-img {
+      width: 150px;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .testimonio {
+      background-color: #eef2ff;
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>AcademAI</h1>
     <nav>
-      <ul>
-        <li><a href="#planes">Planes</a></li>
-        <li><a href="#documentos">Documentos</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-      </ul>
+      <a href="#planes">Planes</a>
+      <a href="#documentos">Documentos</a>
+      <a href="#blog">Blog</a>
+      <a href="#testimonios">Testimonios</a>
     </nav>
   </header>
 
-  <section id="planes">
+  <section class="section" id="planes">
     <h2>Planes de Suscripción</h2>
     <p>Accede a todas nuestras herramientas académicas por solo <strong>S/ 20.00</strong> o <strong>$5</strong> al mes.</p>
-    <div class="qr-pago">
-      <img src="/assets/img/yape-qr.png" alt="Pago por Yape QR">
-      <p>Escanea el código para suscribirte sin compartir tu número.</p>
-    </div>
+    <img src="yape-qr.png" alt="Pago por Yape QR" class="qr-img">
+    <p>Escanea el código para suscribirte sin compartir tu número.</p>
   </section>
 
-  <section id="documentos">
+  <section class="section" id="documentos">
     <h2>Revisión de Documentos</h2>
     <p>Carga hasta 10 documentos a la vez y obtén citas APA, referencias, redacción mejorada y detección de plagio.</p>
-    <input type="file" multiple accept="application/pdf,.doc,.docx" />
-    <button>Procesar Archivos</button>
+    <input type="file" multiple>
+    <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--color-primary); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+      Procesar Archivos
+    </button>
   </section>
 
-  <section id="blog">
+  <section class="section" id="blog">
     <h2>Consultas y Comunidad</h2>
     <p>Publica tus dudas o consejos y recibe respuestas de nuestra comunidad académica.</p>
-    <form>
-      <textarea placeholder="Escribe tu consulta..."></textarea>
-      <button>Publicar</button>
-    </form>
+    <textarea rows="4" style="width: 100%; border-radius: var(--radius); padding: 0.5rem;"></textarea>
+    <button style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--color-accent); color: white; border: none; border-radius: var(--radius); cursor: pointer;">
+      Publicar Consulta
+    </button>
   </section>
 
-  <section id="testimonios">
-    <h2>Testimonios de Usuarios</h2>
+  <section class="section" id="testimonios">
+    <h2>Testimonios</h2>
     <div class="testimonio">
-      <blockquote>
-        “Gracias a AcademAI pude terminar mi tesis en tiempo récord. Las citas APA automáticas me salvaron.”
-      </blockquote>
-      <cite>— Valeria Quispe, UNMSM</cite>
+      <strong>María G. – UNMSM</strong>
+      <p>“Subí mi proyecto y en segundos tuve un índice tentativo y 20 referencias APA listísimas. ¡Me ahorró horas!”</p>
     </div>
     <div class="testimonio">
-      <blockquote>
-        “El detector de plagio me ayudó a evitar errores graves antes de enviar mi trabajo final. Muy útil.”
-      </blockquote>
-      <cite>— José Díaz, PUCP</cite>
-    </div>
-    <div class="testimonio">
-      <blockquote>
-        “Publicar mis dudas y recibir respuestas del equipo fue lo mejor. Muy recomendada la suscripción.”
-      </blockquote>
-      <cite>— Andrea Vilca, UNSAAC</cite>
+      <strong>José R. – PUCP</strong>
+      <p>“El generador de marco teórico me ayudó a pulir la redacción académica y evitar el plagio.”</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 AcademAI. Todos los derechos reservados.</p>
+    © 2025 AcademAI. Todos los derechos reservados.
   </footer>
 </body>
 </html>
